@@ -1,2 +1,2 @@
 #!/bins/bash
-id -nG
+groups
