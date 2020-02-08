@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# this script prints Holberton School ten times #
+fil="/etc/passwd"
+while read line
+do
+    echo "$line" | cut -d ":" -f 1,3,6
+done < $fil
