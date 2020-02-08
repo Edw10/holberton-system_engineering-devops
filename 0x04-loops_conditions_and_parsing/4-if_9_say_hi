@@ -1,10 +1,12 @@
 #!/usr/bin/env bash
-# this script prints Holberton School ten times #
-for i in {0..9}
+# this script prints holberton school 10 times with while #
+i="0"
+while [ $i -lt 10 ]
 do
-    echo "Holberton School"
-    if [ $i -eq 8 ]
-    then
-        echo "Hi"
-    fi
+	echo "Holberton School"
+	if [ $i -eq 8 ]
+	then
+	    echo "Hi"
+	fi
+	i=$(( i + 1 ))
 done
