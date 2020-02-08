@@ -1,17 +1,17 @@
 #!/usr/bin/env bash
 # this script prints Holberton School ten times #
 fil="holbertonschool"
-if [[ -e $fil ]];
+if [ -e $fil ]
 then
     echo "$fil file exists"
-    if [[ ! -s $fil ]];
+    if [ ! -s $fil ]
 	then
 	echo "$fil file is empty"
-    elif [[ -s $fil ]];
+    elif [ -s $fil ]
 	then
 	echo "$fil file is not empty"
     fi
-    if [ -f $fil ];
+    if [ -f $fil ]
 	then
 	echo "$fil is a regular file"
     fi
