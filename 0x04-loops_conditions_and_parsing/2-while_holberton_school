@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # this script prints holberton school 10 times with while #
 i="0"
-while [ $i -lt 9 ]
+while [ $i -lt 10 ]
 do
 	echo "Holberton School"
 	i=$(( i + 1 ))
