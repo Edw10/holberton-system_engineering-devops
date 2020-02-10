@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# this script display the id of the prossess #
+ps | tail -1 | cut -d' ' -f2
