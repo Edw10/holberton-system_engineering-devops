@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# display the process running in user oriented format #
+ps -e u
