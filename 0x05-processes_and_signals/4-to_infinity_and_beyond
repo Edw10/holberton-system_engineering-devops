@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 # display To infinity and beyond indefinitely #
+# shellcheck disable=SC2078
 while [ True ]
 do
 	echo 'To infinity and beyond'
