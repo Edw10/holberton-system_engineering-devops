@@ -4,12 +4,11 @@ fil="holbertonschool"
 if [ -e $fil ]
 then
     echo "$fil file exists"
-    if [ ! -s $fil ]
-	then
-	echo "$fil file is empty"
-    elif [ -s $fil ]
+    if [ -s $fil ]
 	then
 	echo "$fil file is not empty"
+    else
+	echo "$fil file is empty"
     fi
     if [ -f $fil ]
 	then
