@@ -1,8 +1,7 @@
 #!/usr/bin/env bash
 # display To infinity and beyond indefinitely #
+pgrep -f 100-process_and_pid_file > /var/run/holbertonscript.pid
 # shellcheck disable=SC2078
-
-sudo pgrep -f 100-process_and_pid_file > /var/run/holbertonscript.pid
 while [ True ]
 do
     echo 'To infinity and beyond'
