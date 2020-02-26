@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+#this script list the sockets and their programs
+netstat -l -p
