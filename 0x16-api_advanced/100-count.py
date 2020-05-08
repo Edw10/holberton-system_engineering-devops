@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """return all hot psot recursively"""
 import requests
-
+import operator
 
 def recurse(subreddit, hot_list=[], after=""):
     """get hot post"""
