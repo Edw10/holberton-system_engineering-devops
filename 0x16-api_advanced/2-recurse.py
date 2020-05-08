@@ -9,7 +9,9 @@ def recurse(subreddit, hot_list=[], after=""):
     user["User-Agent"] = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) \
     AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.129 Safari/537.36"
     data = requests.get(
-        "https://www.reddit.com/r/{}/hot.json?limit=50&after={}".format(subreddit, after),
+        "https://www.reddit.com/r/{}/hot.json?limit=50&after={}".format(
+            subreddit, after
+        ),
         headers=user
     )
     if data.status_code != 200:
