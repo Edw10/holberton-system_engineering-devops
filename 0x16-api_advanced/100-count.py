@@ -3,6 +3,7 @@
 import requests
 import operator
 
+
 def recurse(subreddit, hot_list=[], after=""):
     """get hot post"""
     user = {}
@@ -27,8 +28,9 @@ def recurse(subreddit, hot_list=[], after=""):
         return hot_list
     return recurse(subreddit, hot_list, after)
 
-def count_words(subreddit, word_list, i=0, hot_list=[], res={}):
 
+def count_words(subreddit, word_list, i=0, hot_list=[], res={}):
+    """count words"""
     after = ''
     subs = word_list[i].split(',')[0]
     patterns = []
@@ -49,8 +51,7 @@ def count_words(subreddit, word_list, i=0, hot_list=[], res={}):
     else:
         sort_res = {}
         sort_res = dict(sorted(res.items(), key=operator.itemgetter(1),
-                               reverse=True)
-        )
-        for k,v in  sort_res.items():
+                               reverse=True))
+        for k, v in sort_res.items():
             if v > 0:
                 print('{}: {}'.format(k, v))
