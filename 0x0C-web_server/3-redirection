@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+#Redirect
+
+sudo apt-get -y update
+sudo apt-get -y install nginx
+echo "Holberton School" | sudo tee /var/www/html/index.nginx-debian.html
+sed -i '/listen 80 default_server/a rewrite ^/redirect_me https://fb.com/edw10/ permanent;' /etc/nginx/sites-available/default
+sudo service nginx restart
