@@ -1,12 +1,14 @@
 #!/usr/bin/env bash
-#Redirect
+#Configure your Nginx server to have a custom 404 page that contains the string Ceci n'est pas une page.
+#!/usr/bin/env bash
+#The redirection must be a “301 Moved Permanently”
+#You answer file should be a Bash script containing commands to automatically configure a Ubuntu machine to respect above requirements
+#Using what you did with 1-install_nginx_web_server, write 3-redirection so that it configures a brand new Ubuntu machine to the requirements asked in this task
 
-sudo apt-get -y update
+sudo apt-get update
 sudo apt-get -y install nginx
-sudo service nginx start
-sudo sh -c "echo 'Holberton School' > /var/www/html/index.html"
-sudo sed -i '43i location /redirect_me{\nrewrite ^/(.*)$ https://www.youtube.com/watch?v=QH2-TGUlwu4v permanent;\n}\n' /etc/nginx/sites-available/default
-echo "Ceci n'est pas une page" | sudo tee /usr/share/nginx/html/custom_404.html
-custom_404="\\\terror_page 404 /custom_404.html;\n\tlocation = /custom_404.html {\n\t\troot /usr/share/nginx/html;\n\t\tinternal;\n\t}"
-sudo sed -i "39i $custom_404" /etc/nginx/sites-enabled/default
-sudo service nginx restart
+echo -e 'Holberton School' > /var/www/html/index.html
+sed -i '43i location /redirect_me{\nrewrite ^/(.*)$ https://www.youtube.com/watch?v=EgBJmlPo8Xw permanent;\n}\n' /etc/nginx/sites-available/default
+sudo echo "Ceci n'est pas une page" > /var/www/html/404.html
+sed -i '46i error_page 404 /404.html;\nlocation = /404.html {\ninternal;\n}\n' /etc/nginx/sites-available/default
+service nginx start
