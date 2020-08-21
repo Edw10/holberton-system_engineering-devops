@@ -1,2 +1,8 @@
 #!/usr/bin/env bash
 #change user
+pkill apache2
+sudo sed -i 's/80 /8080 /' /etc/nginx/sites-enabled/default
+cd /etc/nginx/
+chown nginx:nginx nginx.conf
+chmod 700 nginx.conf
+sudo -u nginx service nginx restart
