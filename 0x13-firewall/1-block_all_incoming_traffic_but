@@ -1,6 +1,3 @@
-#!usr/bin/env bash
-#block all incoming traffic but 22 443 80
-
 sudo apt-get update
 sudo apt-get install ufw
 sudo ufw default deny incoming
